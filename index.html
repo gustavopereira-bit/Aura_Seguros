@@ -1,901 +1,936 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura Seguros | Más que seguros, tranquilidad</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        aura: {
-                            navy: '#0a2540',
-                            deep: '#0d3b66',
-                            blue: '#00a8e8',
-                            gold: '#f4a261',
-                            goldLight: '#e9c46a',
-                            slate: '#f8fafc'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif']
-                    }
-                }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura Seguros | Protegemos lo que más importa</title>
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            aura: {
+              navy: '#0A2540',
+              blue: '#0052CC',
+              lightBlue: '#E6F0FF',
+              accent: '#00D4B6',
+              gold: '#FFC72C',
+              dark: '#051329',
+              slate: '#4A5568'
             }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            script: ['Dancing Script', 'cursive', 'sans-serif']
+          }
         }
-    </script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .gradient-hero {
-            background: linear-gradient(135deg, #0a2540 0%, #0d3b66 60%, #00a8e8 100%);
-        }
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .gold-border {
-            border-image: linear-gradient(to right, #f4a261, #e9c46a) 1;
-        }
-    </style>
+      }
+    }
+  </script>
+  
+  <!-- Google Fonts & Lucide Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .hero-bg {
+      background: linear-gradient(135deg, #0A2540 0%, #003366 50%, #0052CC 100%);
+    }
+  </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-aura-accent selection:text-aura-navy">
 
-    <!-- Header / Navigation Bar -->
-    <header class="sticky top-0 z-50 bg-aura-navy/95 backdrop-blur-md text-white shadow-lg border-b border-aura-blue/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo Slot -->
-                <a href="#inicio" class="flex items-center gap-3 group">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-aura-gold to-aura-blue p-0.5 shadow-md group-hover:scale-105 transition-transform">
-                        <div class="w-full h-full bg-aura-navy rounded-[10px] flex items-center justify-center border border-white/10">
-                            <!-- Placeholder Logo SVG -->
-                            <i class="fa-solid fa-shield-halved text-2xl text-aura-gold"></i>
-                        </div>
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="text-xl font-extrabold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-aura-gold">AURA SEGUROS</span>
-                        <span class="text-[10px] tracking-widest text-aura-blue font-medium uppercase">Protegemos lo que más importa</span>
-                    </div>
-                </a>
+  <!-- ================= HEADER / NAVIGATION ================= -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300" id="header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-24 sm:h-28">
+        
+        <!-- Logo Header -->
+        <a href="#" class="flex items-center space-x-3 group">
+          <div class="bg-white p-2 rounded-xl border border-slate-200 shadow-md transition-transform group-hover:scale-105">
+            <img 
+              src="https://lh3.googleusercontent.com/d/1gTEcQp7ynEqJVc9D6swn-c_Xu8aXhTZR" 
+              alt="Logo Aura Seguros" 
+              class="h-14 sm:h-20 w-auto object-contain max-w-[200px] sm:max-w-[280px]"
+              onerror="this.onerror=null; this.src='https://placehold.co/240x80/0A2540/FFFFFF?text=AURA+SEGUROS';"
+            />
+          </div>
+        </a>
 
-                <!-- Desktop Nav Navigation -->
-                <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
-                    <a href="#inicio" class="hover:text-aura-gold transition-colors py-1 border-b-2 border-transparent hover:border-aura-gold">Inicio</a>
-                    <a href="#catalogo" class="hover:text-aura-gold transition-colors py-1 border-b-2 border-transparent hover:border-aura-gold">Catálogo General</a>
-                    <a href="#aura-contigo" class="hover:text-aura-gold transition-colors py-1 border-b-2 border-transparent hover:border-aura-gold">Aura Contigo</a>
-                    <a href="#cotizador" class="hover:text-aura-gold transition-colors py-1 border-b-2 border-transparent hover:border-aura-gold">Cotizador</a>
-                    <a href="#contacto" class="hover:text-aura-gold transition-colors py-1 border-b-2 border-transparent hover:border-aura-gold">Contacto</a>
-                </nav>
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#catalogo" class="text-slate-700 hover:text-aura-blue font-semibold transition-colors">Catálogo</a>
+          <a href="#aura-contigo" class="text-slate-700 hover:text-aura-blue font-semibold transition-colors">Aura Contigo</a>
+          <a href="#cotizador" class="text-slate-700 hover:text-aura-blue font-semibold transition-colors">Cotizador Rápido</a>
+          <a href="#nosotros" class="text-slate-700 hover:text-aura-blue font-semibold transition-colors">Nosotros</a>
+          <a href="#contacto" class="text-slate-700 hover:text-aura-blue font-semibold transition-colors">Contacto</a>
+        </nav>
 
-                <!-- Header Call Button -->
-                <div class="hidden lg:flex items-center gap-4">
-                    <a href="tel:5551234567" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full text-sm font-semibold transition-all border border-white/20">
-                        <i class="fa-solid fa-phone text-aura-gold"></i>
-                        <span>555 123 4567</span>
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-2xl text-white focus:outline-none p-2">
-                    <i class="fa-solid fa-bars" id="menu-icon"></i>
-                </button>
-            </div>
+        <!-- CTA Buttons -->
+        <div class="hidden sm:flex items-center space-x-4">
+          <a href="tel:5551234567" class="flex items-center text-sm font-bold text-aura-navy hover:text-aura-blue transition-colors">
+            <i data-lucide="phone" class="w-4 h-4 mr-1.5 text-aura-blue"></i>
+            555 123 4567
+          </a>
+          <a href="#cotizador" class="inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-extrabold text-white bg-aura-blue hover:bg-blue-700 shadow-md shadow-blue-500/20 transition-all hover:scale-[1.02]">
+            Cotizar Ahora
+          </a>
         </div>
 
-        <!-- Mobile Nav Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-aura-deep border-b border-aura-blue/30 px-4 pt-2 pb-6 space-y-3">
-            <a href="#inicio" class="mobile-link block py-2 text-slate-200 hover:text-aura-gold font-medium">Inicio</a>
-            <a href="#catalogo" class="mobile-link block py-2 text-slate-200 hover:text-aura-gold font-medium">Catálogo General</a>
-            <a href="#aura-contigo" class="mobile-link block py-2 text-slate-200 hover:text-aura-gold font-medium">Aura Contigo</a>
-            <a href="#cotizador" class="mobile-link block py-2 text-slate-200 hover:text-aura-gold font-medium">Cotizador</a>
-            <a href="#contacto" class="mobile-link block py-2 text-slate-200 hover:text-aura-gold font-medium">Contacto</a>
-            <a href="tel:5551234567" class="inline-flex items-center gap-2 bg-aura-gold text-aura-navy px-4 py-2 rounded-lg font-bold text-sm w-full justify-center mt-2">
-                <i class="fa-solid fa-phone"></i> 555 123 4567
-            </a>
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" type="button" class="text-slate-700 hover:text-aura-navy p-2 rounded-lg" aria-label="Abrir Menú">
+            <i data-lucide="menu" class="w-7 h-7"></i>
+          </button>
         </div>
-    </header>
-
-    <main class="flex-grow">
-        <!-- Hero Section -->
-        <section id="inicio" class="relative gradient-hero text-white py-20 lg:py-28 overflow-hidden">
-            <!-- Background Glow FX -->
-            <div class="absolute -top-24 -left-24 w-96 h-96 bg-aura-blue/20 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute bottom-0 right-0 w-96 h-96 bg-aura-gold/10 rounded-full blur-3xl pointer-events-none"></div>
-
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="grid lg:grid-cols-12 gap-12 items-center">
-                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-aura-blue/20 text-aura-blue border border-aura-blue/30 backdrop-blur-sm">
-                            <i class="fa-solid fa-shield-heart text-aura-gold"></i> Catálogo Oficial 2026
-                        </span>
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-                            Más que seguros, <span class="bg-clip-text text-transparent bg-gradient-to-r from-aura-gold to-aura-goldLight">tranquilidad</span>.
-                        </h1>
-                        <p class="text-lg sm:text-xl text-slate-300 max-w-2xl font-light">
-                            Protección inteligente para personas, familias y empresas. Soluciones integrales diseñadas para darte respaldo en cada etapa de tu vida.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                            <a href="#cotizador" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-aura-gold to-aura-goldLight text-aura-navy px-8 py-4 rounded-xl font-bold shadow-lg shadow-aura-gold/20 hover:scale-105 transition-all text-base">
-                                <i class="fa-solid fa-calculator"></i> Cotizar Ahora
-                            </a>
-                            <a href="#catalogo" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold border border-white/20 backdrop-blur-sm transition-all text-base">
-                                Explorar Catálogo <i class="fa-solid fa-arrow-right text-xs"></i>
-                            </a>
-                        </div>
-                        
-                        <!-- Value Badges -->
-                        <div class="grid grid-cols-3 gap-4 pt-8 border-t border-white/10 text-center lg:text-left">
-                            <div>
-                                <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Confianza</p>
-                                <p class="text-sm sm:text-base font-bold text-white">100% Garantizada</p>
-                            </div>
-                            <div>
-                                <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Asistencia</p>
-                                <p class="text-sm sm:text-base font-bold text-white">24/7 Disponible</p>
-                            </div>
-                            <div>
-                                <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Planes Desde</p>
-                                <p class="text-sm sm:text-base font-bold text-aura-gold">Q35 / mes</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Image / Shield Hero Graphic Slot -->
-                    <div class="lg:col-span-5 flex justify-center">
-                        <div class="relative w-full max-w-md">
-                            <div class="absolute inset-0 bg-gradient-to-tr from-aura-gold to-aura-blue rounded-3xl transform rotate-3 scale-105 opacity-30 blur-lg"></div>
-                            
-                            <!-- Placeholder Banner Image Frame -->
-                            <div class="relative bg-aura-navy/80 border-2 border-white/20 rounded-3xl p-6 shadow-2xl backdrop-blur-md overflow-hidden text-center group">
-                                <div class="w-full h-72 bg-gradient-to-b from-slate-800 to-aura-deep rounded-2xl flex flex-col items-center justify-center p-6 border border-white/10 relative overflow-hidden">
-                                    <i class="fa-solid fa-user-shield text-7xl text-aura-blue/60 mb-4 group-hover:scale-110 transition-transform duration-500"></i>
-                                    <p class="text-sm text-slate-300 font-medium">[ Espacio reservado para tu imagen principal ]</p>
-                                    <span class="text-xs text-aura-gold mt-1">Reemplaza con tu imagen o foto corporativa</span>
-                                </div>
-                                <div class="mt-4 flex items-center justify-between text-xs text-slate-300 px-2">
-                                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-green-400"></i> Cobertura Global</span>
-                                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-green-400"></i> Atención Inmediata</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Catálogo General de Servicios Section -->
-        <section id="catalogo" class="py-20 bg-slate-100">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-12">
-                    <h2 class="text-xs uppercase tracking-widest font-extrabold text-aura-blue mb-2">Soluciones Integrales</h2>
-                    <p class="text-3xl sm:text-4xl font-bold text-aura-navy">Catálogo de Servicios 2026</p>
-                    <p class="text-slate-600 mt-3 text-base">Protección adaptada para cada etapa de tu vida personal, familiar o empresarial.</p>
-                </div>
-
-                <!-- Category Filter Tabs -->
-                <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10">
-                    <button onclick="filterCatalog('todos')" class="catalog-tab active px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-aura-navy text-white shadow-md">Todos</button>
-                    <button onclick="filterCatalog('vida')" class="catalog-tab px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-white text-slate-700 hover:bg-slate-200">Vida</button>
-                    <button onclick="filterCatalog('salud')" class="catalog-tab px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-white text-slate-700 hover:bg-slate-200">Salud & Accidentes</button>
-                    <button onclick="filterCatalog('vehiculos')" class="catalog-tab px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-white text-slate-700 hover:bg-slate-200">Vehículos</button>
-                    <button onclick="filterCatalog('hogar')" class="catalog-tab px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-white text-slate-700 hover:bg-slate-200">Hogar / Patrimonial</button>
-                    <button onclick="filterCatalog('empresarial')" class="catalog-tab px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-white text-slate-700 hover:bg-slate-200">Empresarial / PYME</button>
-                </div>
-
-                <!-- Catalog Grid Items -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="catalog-grid">
-                    
-                    <!-- Seguro de Vida -->
-                    <div class="catalog-item vida bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="w-12 h-12 bg-blue-50 text-aura-deep rounded-xl flex items-center justify-center text-2xl font-bold">
-                                    <i class="fa-solid fa-heart-pulse"></i>
-                                </div>
-                                <span class="bg-blue-100 text-aura-deep text-xs font-bold px-3 py-1 rounded-full">Desde Q75/mes</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-aura-navy mb-2">Seguro de Vida</h3>
-                            <p class="text-slate-600 text-sm mb-4">Protección económica para beneficiarios designados en caso de fallecimiento.</p>
-                            <div class="border-t border-slate-100 pt-4 mb-4">
-                                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Coberturas Principales</p>
-                                <ul class="text-sm space-y-1.5 text-slate-700">
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Fallecimiento por causas cubiertas</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Muerte accidental</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Invalidez total y permanente</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Asistencia funeraria</li>
-                                </ul>
-                            </div>
-                            <div class="bg-slate-50 p-3 rounded-lg text-xs space-y-1 text-slate-600 mb-4">
-                                <p><strong>Básico:</strong> Q100,000 · desde Q75/mes</p>
-                                <p><strong>Familiar:</strong> Q250,000 · desde Q150/mes</p>
-                                <p><strong>Plus:</strong> Q500,000 · desde Q275/mes</p>
-                            </div>
-                        </div>
-                        <a href="#cotizador" class="block text-center bg-aura-navy hover:bg-aura-deep text-white font-semibold py-2.5 rounded-xl transition-colors text-sm">Cotizar Vida</a>
-                    </div>
-
-                    <!-- Accidentes Personales -->
-                    <div class="catalog-item salud bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="w-12 h-12 bg-amber-50 text-aura-gold rounded-xl flex items-center justify-center text-2xl font-bold">
-                                    <i class="fa-solid fa-user-ninja"></i>
-                                </div>
-                                <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full">Desde Q35/mes</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-aura-navy mb-2">Accidentes Personales</h3>
-                            <p class="text-slate-600 text-sm mb-4">Protección económica inmediata frente a las consecuencias de un accidente.</p>
-                            <div class="border-t border-slate-100 pt-4 mb-4">
-                                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Coberturas Principales</p>
-                                <ul class="text-sm space-y-1.5 text-slate-700">
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Incapacidad total o parcial</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Gastos médicos por accidente</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Fallecimiento accidental</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Asistencia inmediata</li>
-                                </ul>
-                            </div>
-                            <div class="bg-slate-50 p-3 rounded-lg text-xs space-y-1 text-slate-600 mb-4">
-                                <p><strong>Básico:</strong> Cobertura Q50,000 · Q35/mes</p>
-                                <p><strong>Plus:</strong> Cobertura Q100,000 · Q60/mes</p>
-                                <p><strong>Premium:</strong> Cobertura Q200,000 · Q95/mes</p>
-                            </div>
-                        </div>
-                        <a href="#cotizador" class="block text-center bg-aura-navy hover:bg-aura-deep text-white font-semibold py-2.5 rounded-xl transition-colors text-sm">Cotizar Accidentes</a>
-                    </div>
-
-                    <!-- Gastos Médicos -->
-                    <div class="catalog-item salud bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center text-2xl font-bold">
-                                    <i class="fa-solid fa-hospital-user"></i>
-                                </div>
-                                <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">Desde Q350/mes</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-aura-navy mb-2">Gastos Médicos</h3>
-                            <p class="text-slate-600 text-sm mb-4">Apoyo económico integral para consultas, emergencias y hospitalización.</p>
-                            <div class="border-t border-slate-100 pt-4 mb-4">
-                                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Coberturas Principales</p>
-                                <ul class="text-sm space-y-1.5 text-slate-700">
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Consultas & Medicamentos</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Hospitalización y Cirugías</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Exámenes de diagnóstico</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Servicios ambulatorios</li>
-                                </ul>
-                            </div>
-                            <div class="bg-slate-50 p-3 rounded-lg text-xs space-y-1 text-slate-600 mb-4">
-                                <p><strong>Esencial:</strong> Q100,000 suma asegurada</p>
-                                <p><strong>Integral:</strong> Q250,000 suma asegurada</p>
-                                <p><strong>Premium:</strong> Q500,000 suma asegurada</p>
-                            </div>
-                        </div>
-                        <a href="#cotizador" class="block text-center bg-aura-navy hover:bg-aura-deep text-white font-semibold py-2.5 rounded-xl transition-colors text-sm">Cotizar Salud</a>
-                    </div>
-
-                    <!-- Seguro de Vehículos -->
-                    <div class="catalog-item vehiculos bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="w-12 h-12 bg-sky-50 text-aura-blue rounded-xl flex items-center justify-center text-2xl font-bold">
-                                    <i class="fa-solid fa-car"></i>
-                                </div>
-                                <span class="bg-sky-100 text-sky-800 text-xs font-bold px-3 py-1 rounded-full">Desde Q3,500/año</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-aura-navy mb-2">Seguro de Vehículos</h3>
-                            <p class="text-slate-600 text-sm mb-4">Protección por colisión, robo, daños y asistencia vial 24/7 en carretera.</p>
-                            <div class="border-t border-slate-100 pt-4 mb-4">
-                                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Coberturas Principales</p>
-                                <ul class="text-sm space-y-1.5 text-slate-700">
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Daños materiales y colisión</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Robo total o parcial</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Responsabilidad civil a terceros</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Grúa y vehículo sustituto</li>
-                                </ul>
-                            </div>
-                            <div class="bg-slate-50 p-3 rounded-lg text-xs text-slate-600 mb-4">
-                                <p><strong>Valor Ref. Q150,000:</strong> Prima desde Q3,500 al año con facilidades de pago mensual.</p>
-                            </div>
-                        </div>
-                        <a href="#cotizador" class="block text-center bg-aura-navy hover:bg-aura-deep text-white font-semibold py-2.5 rounded-xl transition-colors text-sm">Cotizar Vehículo</a>
-                    </div>
-
-                    <!-- Seguro Patrimonial / Hogar -->
-                    <div class="catalog-item hogar bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center text-2xl font-bold">
-                                    <i class="fa-solid fa-house-chimney-user"></i>
-                                </div>
-                                <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full">Desde Q100/mes</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-aura-navy mb-2">Patrimonial y Hogar</h3>
-                            <p class="text-slate-600 text-sm mb-4">Protección integral para tu vivienda, oficinas, mobiliario y patrimonio.</p>
-                            <div class="border-t border-slate-100 pt-4 mb-4">
-                                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Coberturas Principales</p>
-                                <ul class="text-sm space-y-1.5 text-slate-700">
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Incendio y fenómenos naturales</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Robo y daños por agua</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Responsabilidad civil</li>
-                                </ul>
-                            </div>
-                            <div class="bg-slate-50 p-3 rounded-lg text-xs space-y-1 text-slate-600 mb-4">
-                                <p><strong>Básico:</strong> Q100,000 · desde Q100/mes</p>
-                                <p><strong>Plus:</strong> Q250,000 · desde Q200/mes</p>
-                                <p><strong>Premium:</strong> Q500,000 · desde Q375/mes</p>
-                            </div>
-                        </div>
-                        <a href="#cotizador" class="block text-center bg-aura-navy hover:bg-aura-deep text-white font-semibold py-2.5 rounded-xl transition-colors text-sm">Cotizar Hogar</a>
-                    </div>
-
-                    <!-- Seguro PYME & Empresarial -->
-                    <div class="catalog-item empresarial bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center text-2xl font-bold">
-                                    <i class="fa-solid fa-briefcase"></i>
-                                </div>
-                                <span class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full">Desde Q300/mes</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-aura-navy mb-2">Seguro para PYMEs</h3>
-                            <p class="text-slate-600 text-sm mb-4">Respaldo total para pequeñas y medianas empresas, inventarios y operaciones.</p>
-                            <div class="border-t border-slate-100 pt-4 mb-4">
-                                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Coberturas Principales</p>
-                                <ul class="text-sm space-y-1.5 text-slate-700">
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Edificaciones y mobiliario</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Equipos, inventarios e incendio</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500 text-xs"></i> Continuidad del negocio</li>
-                                </ul>
-                            </div>
-                            <div class="bg-slate-50 p-3 rounded-lg text-xs space-y-1 text-slate-600 mb-4">
-                                <p><strong>Básico:</strong> Hasta Q250k · Q300/mes</p>
-                                <p><strong>Plus:</strong> Hasta Q500k · Q550/mes</p>
-                                <p><strong>Integral:</strong> Hasta Q1,000k · Q900/mes</p>
-                            </div>
-                        </div>
-                        <a href="#cotizador" class="block text-center bg-aura-navy hover:bg-aura-deep text-white font-semibold py-2.5 rounded-xl transition-colors text-sm">Cotizar PYME</a>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Section: AURA CONTIGO -->
-        <section id="aura-contigo" class="py-20 bg-aura-navy text-white relative overflow-hidden">
-            <!-- Background Elements -->
-            <div class="absolute -right-20 -top-20 w-80 h-80 bg-aura-blue/10 rounded-full blur-3xl"></div>
-            
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-aura-gold/20 text-aura-gold text-xs font-extrabold uppercase tracking-widest border border-aura-gold/30 mb-4">
-                        <i class="fa-solid fa-star"></i> Producto Estrella
-                    </div>
-                    <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
-                        AURA <span class="text-aura-gold">CONTIGO</span>
-                    </h2>
-                    <p class="text-lg text-slate-300 mt-4">Una sola protección para todo lo que importa. Solución integral de vida, accidentes, asistencia médica y hogar en una sola cuota accesible.</p>
-                </div>
-
-                <!-- Aura Contigo Cards Grid -->
-                <div class="grid md:grid-cols-3 gap-8">
-                    
-                    <!-- Plan Personal -->
-                    <div class="bg-aura-deep/80 border border-white/10 rounded-3xl p-8 backdrop-blur-md flex flex-col justify-between hover:border-aura-blue/50 transition-all">
-                        <div>
-                            <div class="flex justify-between items-center mb-6">
-                                <span class="text-xs uppercase tracking-wider font-bold text-aura-blue">Plan Individual</span>
-                                <i class="fa-solid fa-user text-2xl text-aura-gold"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white mb-2">Aura Contigo</h3>
-                            <div class="my-4">
-                                <span class="text-4xl font-extrabold text-white">Q45</span>
-                                <span class="text-slate-400 text-sm">/ mes</span>
-                            </div>
-                            <p class="text-slate-300 text-sm mb-6">Protección individual y servicios digitales para ti.</p>
-                            <ul class="space-y-3 text-sm text-slate-200 border-t border-white/10 pt-6">
-                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-aura-gold"></i> Cobertura de Vida hasta Q50,000</li>
-                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-aura-gold"></i> Accidentes Personales Q25,000</li>
-                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-aura-gold"></i> Telemedicina & Orientación Médica</li>
-                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-aura-gold"></i> Asistencia funeraria</li>
-                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-aura-gold"></i> Atención digital 24/7</li>
-                            </ul>
-                        </div>
-                        <a href="#cotizador" class="mt-8 block text-center bg-white/10 hover:bg-white/20 text-white font-bold py-3 rounded-xl transition-all border border-white/20 text-sm">
-                            Seleccionar Plan
-                        </a>
-                    </div>
-
-                    <!-- Plan Familia (Featured Highlight) -->
-                    <div class="bg-gradient-to-b from-aura-deep to-slate-900 border-2 border-aura-gold rounded-3xl p-8 shadow-2xl relative flex flex-col justify-between transform md:-translate-y-4">
-                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-aura-gold text-aura-navy font-extrabold text-xs px-4 py-1 rounded-full uppercase tracking-wider shadow-md">
-                            Más Popular
-                        </div>
-                        <div>
-                            <div class="flex justify-between items-center mb-6">
-                                <span class="text-xs uppercase tracking-wider font-bold text-aura-gold">Bienestar Familiar</span>
-                                <i class="fa-solid fa-people-roof text-3xl text-aura-gold"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white mb-2">Aura Contigo Familia</h3>
-                            <div class="my-4">
-                                <span class="text-5xl font-extrabold text-aura-gold">Q75</span>
-                                <span class="text-slate-300 text-sm">/ mes</span>
-                            </div>
-                            <p class="text-slate-300 text-sm mb-6">Concentra la máxima seguridad para tu grupo familiar.</p>
-                            <ul class="space-y-3 text-sm text-slate-200 border-t border-white/10 pt-6">
-                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-aura-gold"></i> Cobertura de Vida hasta Q200,000</li>
-                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-aura-gold"></i> Accidentes Personales Q100,000</li>
-                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-aura-gold"></i> Telemedicina ilimitada</li>
-                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-aura-gold"></i> Asistencia Hogar incluida</li>
-                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-aura-gold"></i> Beneficios Familiares integrales</li>
-                            </ul>
-                        </div>
-                        <a href="#cotizador" class="mt-8 block text-center bg-gradient-to-r from-aura-gold to-aura-goldLight text-aura-navy font-extrabold py-3.5 rounded-xl shadow-lg hover:scale-105 transition-all text-sm">
-                            ¡Contrátalo Hoy!
-                        </a>
-                    </div>
-
-                    <!-- Plan Plus Premium -->
-                    <div class="bg-aura-deep/80 border border-white/10 rounded-3xl p-8 backdrop-blur-md flex flex-col justify-between hover:border-aura-blue/50 transition-all">
-                        <div>
-                            <div class="flex justify-between items-center mb-6">
-                                <span class="text-xs uppercase tracking-wider font-bold text-aura-blue">Protección Ampliada</span>
-                                <i class="fa-solid fa-crown text-2xl text-aura-gold"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white mb-2">Aura Contigo Plus</h3>
-                            <div class="my-4">
-                                <span class="text-4xl font-extrabold text-white">Q110</span>
-                                <span class="text-slate-400 text-sm">/ mes</span>
-                            </div>
-                            <p class="text-slate-300 text-sm mb-6">Máxima tranquilidad con ventajas exclusivas de salud.</p>
-                            <ul class="space-y-3 text-sm text-slate-200 border-t border-white/10 pt-6">
-                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-aura-gold"></i> Cobertura de Vida hasta Q250,000</li>
-                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-aura-gold"></i> Accidentes Personales Q150,000</li>
-                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-aura-gold"></i> <strong>75% desc. en medicamentos</strong></li>
-                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-aura-gold"></i> Telemedicina + Asistencia Hogar</li>
-                                <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-aura-gold"></i> Asistencia funeraria premium</li>
-                            </ul>
-                        </div>
-                        <a href="#cotizador" class="mt-8 block text-center bg-white/10 hover:bg-white/20 text-white font-bold py-3 rounded-xl transition-all border border-white/20 text-sm">
-                            Seleccionar Plan
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Interactive Quote Calculator Section -->
-        <section id="cotizador" class="py-20 bg-slate-50">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-white rounded-3xl shadow-xl border border-slate-200 p-6 sm:p-10">
-                    <div class="text-center max-w-2xl mx-auto mb-10">
-                        <span class="text-xs uppercase font-bold text-aura-blue tracking-widest">Simula tu Plan</span>
-                        <h2 class="text-3xl font-extrabold text-aura-navy mt-1">Cotizador Interactivo de Seguro</h2>
-                        <p class="text-slate-600 text-sm mt-2">Calcula en tiempo real la inversión para proteger lo que más quieres.</p>
-                    </div>
-
-                    <form id="quote-form" class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <!-- Insurance Type Selector -->
-                            <div>
-                                <label for="quote-type" class="block text-xs font-bold text-slate-700 uppercase mb-2">Tipo de Seguro</label>
-                                <select id="quote-type" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 font-medium focus:ring-2 focus:ring-aura-blue focus:outline-none">
-                                    <option value="aura-contigo">Aura Contigo (Solución Integral)</option>
-                                    <option value="vida">Seguro de Vida</option>
-                                    <option value="accidentes">Accidentes Personales</option>
-                                    <option value="salud">Gastos Médicos</option>
-                                    <option value="vehiculo">Seguro de Vehículo</option>
-                                    <option value="hogar">Patrimonial / Hogar</option>
-                                    <option value="pyme">Seguro PYME</option>
-                                </select>
-                            </div>
-
-                            <!-- Plan Level Selector -->
-                            <div>
-                                <label for="quote-plan" class="block text-xs font-bold text-slate-700 uppercase mb-2">Nivel de Cobertura / Plan</label>
-                                <select id="quote-plan" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 font-medium focus:ring-2 focus:ring-aura-blue focus:outline-none">
-                                    <!-- Options updated dynamically via JS -->
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <!-- Units Selector (People, Vehicles, Employees) -->
-                            <div>
-                                <label id="unit-label" for="quote-units" class="block text-xs font-bold text-slate-700 uppercase mb-2">Número de Integrantes / Unidades</label>
-                                <div class="flex items-center gap-3">
-                                    <input type="number" id="quote-units" min="1" max="100" value="1" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 font-bold focus:ring-2 focus:ring-aura-blue focus:outline-none">
-                                </div>
-                            </div>
-
-                            <!-- Payment Cycle Selector -->
-                            <div>
-                                <label for="quote-cycle" class="block text-xs font-bold text-slate-700 uppercase mb-2">Frecuencia de Pago</label>
-                                <select id="quote-cycle" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 font-medium focus:ring-2 focus:ring-aura-blue focus:outline-none">
-                                    <option value="mensual">Mensual</option>
-                                    <option value="anual">Anual (Ahorra un mes)</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <!-- Price Results Box -->
-                        <div class="bg-gradient-to-br from-aura-navy to-aura-deep rounded-2xl p-6 text-white flex flex-col sm:flex-row justify-between items-center gap-6 mt-8">
-                            <div>
-                                <p class="text-xs uppercase tracking-wider text-slate-300 font-semibold">Estimación de Prima Calculada</p>
-                                <div class="flex items-baseline gap-2 mt-1">
-                                    <span id="calculated-price" class="text-4xl font-extrabold text-aura-gold">Q45.00</span>
-                                    <span id="calculated-cycle" class="text-slate-300 text-sm">/ mes</span>
-                                </div>
-                                <p id="calculated-detail" class="text-xs text-slate-300 mt-1">Incluye cobertura de vida y asistencias básicas.</p>
-                            </div>
-
-                            <a href="#contacto" class="w-full sm:w-auto text-center bg-aura-gold hover:bg-aura-goldLight text-aura-navy font-extrabold px-6 py-3.5 rounded-xl transition-all shadow-md text-sm whitespace-nowrap">
-                                Solicitar Póliza
-                            </a>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ Accordion Section -->
-        <section class="py-20 bg-white border-t border-slate-200">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-aura-navy">Preguntas Frecuentes</h2>
-                    <p class="text-slate-600 text-sm mt-2">Respuestas rápidas a las consultas más comunes sobre nuestras pólizas.</p>
-                </div>
-
-                <div class="space-y-4" id="faq-accordion">
-                    
-                    <!-- FAQ Item 1 -->
-                    <div class="border border-slate-200 rounded-2xl overflow-hidden">
-                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left font-bold text-aura-navy hover:bg-slate-50 transition-colors">
-                            <span>¿Qué diferencia hay entre Catálogo General y Aura Contigo?</span>
-                            <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                        </button>
-                        <div class="hidden p-5 pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
-                            Aura Contigo combina múltiples coberturas (vida, accidentes, telemedicina y asistencias del hogar) en un solo producto empaquetado a un precio promocional único, mientras que el Catálogo General te permite adquirir coberturas específicas y modular el monto máximo asegurado.
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 2 -->
-                    <div class="border border-slate-200 rounded-2xl overflow-hidden">
-                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left font-bold text-aura-navy hover:bg-slate-50 transition-colors">
-                            <span>¿Cómo funcionan las asistencias de Telemedicina?</span>
-                            <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                        </button>
-                        <div class="hidden p-5 pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
-                            Con los planes Aura Contigo, obtienes acceso ilimitado a consultas médicas digitales y orientación profesional 24/7 sin necesidad de trasladarte, además de descuentos de hasta un 75% en farmacias adheridas según tu plan.
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 3 -->
-                    <div class="border border-slate-200 rounded-2xl overflow-hidden">
-                        <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left font-bold text-aura-navy hover:bg-slate-50 transition-colors">
-                            <span>¿Qué requisitos necesito para asegurar un vehículo o PYME?</span>
-                            <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                        </button>
-                        <div class="hidden p-5 pt-0 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
-                            Para vehículos se solicita la tarjeta de circulación y una inspección digital rápida. Para PYMEs, evaluamos la suma asegurada de inventario y ubicación del inmueble. Un asesor te acompañará durante todo el proceso en minutos.
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contacto" class="py-20 bg-slate-900 text-white relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-12 gap-12">
-                    
-                    <!-- Contact Info -->
-                    <div class="lg:col-span-5 space-y-6">
-                        <h2 class="text-3xl font-extrabold text-white">Contacta con un Asesor</h2>
-                        <p class="text-slate-400 text-sm">
-                            ¿Tienes dudas sobre la mejor póliza para ti o tu empresa? Déjanos tus datos y te brindaremos asesoría personalizada sin compromiso.
-                        </p>
-
-                        <div class="space-y-4 pt-4">
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-aura-blue/20 rounded-xl flex items-center justify-center text-aura-blue text-lg">
-                                    <i class="fa-solid fa-phone"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-slate-400 uppercase font-semibold">Teléfono de Atención</p>
-                                    <p class="text-base font-bold text-white">555 123 4567</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-aura-gold/20 rounded-xl flex items-center justify-center text-aura-gold text-lg">
-                                    <i class="fa-solid fa-globe"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-slate-400 uppercase font-semibold">Sitio Web Oficial</p>
-                                    <p class="text-base font-bold text-white">www.auraseguros.com</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-emerald-500/20 rounded-xl flex items-center justify-center text-emerald-400 text-lg">
-                                    <i class="fa-solid fa-clock"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-slate-400 uppercase font-semibold">Horario de Atención</p>
-                                    <p class="text-base font-bold text-white">Lunes a Viernes: 8:00 AM - 6:00 PM</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Contact Form -->
-                    <div class="lg:col-span-7 bg-aura-navy p-8 rounded-3xl border border-white/10 shadow-2xl">
-                        <form id="contact-form" class="space-y-4">
-                            <div class="grid sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label for="contact-name" class="block text-xs font-semibold text-slate-300 uppercase mb-1">Nombre Completo</label>
-                                    <input type="text" id="contact-name" required placeholder="Ej. Ana García" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-aura-blue">
-                                </div>
-                                <div>
-                                    <label for="contact-phone" class="block text-xs font-semibold text-slate-300 uppercase mb-1">Teléfono</label>
-                                    <input type="tel" id="contact-phone" required placeholder="Ej. 5555-0000" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-aura-blue">
-                                </div>
-                            </div>
-
-                            <div>
-                                <label for="contact-email" class="block text-xs font-semibold text-slate-300 uppercase mb-1">Correo Electrónico</label>
-                                <input type="email" id="contact-email" required placeholder="correo@ejemplo.com" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-aura-blue">
-                            </div>
-
-                            <div>
-                                <label for="contact-interest" class="block text-xs font-semibold text-slate-300 uppercase mb-1">Póliza de Interés</label>
-                                <select id="contact-interest" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-aura-blue">
-                                    <option value="Aura Contigo">Aura Contigo</option>
-                                    <option value="Vida">Seguro de Vida</option>
-                                    <option value="Accidentes">Accidentes Personales</option>
-                                    <option value="Gastos Médicos">Gastos Médicos</option>
-                                    <option value="Vehículos">Seguro de Vehículos</option>
-                                    <option value="PYME">Seguro de PYME / Empresas</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label for="contact-message" class="block text-xs font-semibold text-slate-300 uppercase mb-1">Mensaje o Consulta</label>
-                                <textarea id="contact-message" rows="3" placeholder="Escribe tus requerimientos..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-aura-blue"></textarea>
-                            </div>
-
-                            <button type="submit" class="w-full bg-gradient-to-r from-aura-gold to-aura-goldLight text-aura-navy font-extrabold py-3.5 rounded-xl shadow-lg hover:scale-[1.01] transition-all text-sm">
-                                Enviar Mensaje
-                            </button>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-aura-navy text-slate-400 py-10 border-t border-white/10 text-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-3">
-                <i class="fa-solid fa-shield-halved text-aura-gold text-xl"></i>
-                <span class="text-white font-bold text-sm">AURA SEGUROS</span>
-            </div>
-            <p>© 2026 Aura Seguros. Todos los derechos reservados. Catálogo de Servicios 2026.</p>
-            <div class="flex gap-4">
-                <a href="https://www.auraseguros.com" target="_blank" class="hover:text-white transition-colors">www.auraseguros.com</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Confirmation Modal -->
-    <div id="modal-confirm" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl p-8 max-w-sm w-full text-center space-y-4 shadow-2xl">
-            <div class="w-16 h-16 bg-green-100 text-green-500 rounded-full flex items-center justify-center text-3xl mx-auto">
-                <i class="fa-solid fa-check"></i>
-            </div>
-            <h3 class="text-xl font-bold text-aura-navy">¡Solicitud Recibida!</h3>
-            <p class="text-slate-600 text-xs leading-relaxed">
-                Gracias por ponerte en contacto con Aura Seguros. Un asesor especializado revisará tus datos y se comunicará contigo a la brevedad.
-            </p>
-            <button onclick="closeModal()" class="w-full bg-aura-navy text-white font-bold py-2.5 rounded-xl text-xs hover:bg-aura-deep transition-colors">
-                Entendido
-            </button>
-        </div>
+      </div>
     </div>
 
-    <!-- Interactive Logic Scripts -->
-    <script>
-        // Data Structure for Real-Time Calculator
-        const quoteDatabase = {
-            'aura-contigo': {
-                label: 'Aura Contigo',
-                unitLabel: 'Número de Integrantes',
-                plans: [
-                    { id: 'ind', name: 'Individual (Q45/mes)', price: 45, detail: 'Cobertura Vida Q50k + Accidentes Q25k' },
-                    { id: 'fam', name: 'Familia (Q75/mes)', price: 75, detail: 'Cobertura Vida Q200k + Asistencia Hogar' },
-                    { id: 'plus', name: 'Plus Premium (Q110/mes)', price: 110, detail: 'Cobertura Vida Q250k + 75% desc. Medicamentos' }
-                ]
-            },
-            'vida': {
-                label: 'Seguro de Vida',
-                unitLabel: 'Asegurados',
-                plans: [
-                    { id: 'basico', name: 'Básico Q100,000 (Q75/mes)', price: 75, detail: 'Cobertura por fallecimiento e invalidez' },
-                    { id: 'familiar', name: 'Familiar Q250,000 (Q150/mes)', price: 150, detail: 'Protección para grupo familiar' },
-                    { id: 'plus', name: 'Plus Q500,000 (Q275/mes)', price: 275, detail: 'Suma asegurada ampliada' }
-                ]
-            },
-            'accidentes': {
-                label: 'Accidentes Personales',
-                unitLabel: 'Personas Protegidas',
-                plans: [
-                    { id: 'basico', name: 'Básico Q50,000 (Q35/mes)', price: 35, detail: 'Gastos médicos y asistencia' },
-                    { id: 'plus', name: 'Plus Q100,000 (Q60/mes)', price: 60, detail: 'Cobertura intermedia' },
-                    { id: 'premium', name: 'Premium Q200,000 (Q95/mes)', price: 95, detail: 'Incapacidad y gastos extendidos' }
-                ]
-            },
-            'salud': {
-                label: 'Gastos Médicos',
-                unitLabel: 'Personas Protegidas',
-                plans: [
-                    { id: 'esencial', name: 'Esencial Q100,000 (Q350/mes)', price: 350, detail: 'Consultas y hospitalización' },
-                    { id: 'integral', name: 'Integral Q250,000 (Q650/mes)', price: 650, detail: 'Atención médica completa' },
-                    { id: 'premium', name: 'Premium Q500,000 (Q950/mes)', price: 950, detail: 'Cobertura máxima hospitalaria' }
-                ]
-            },
-            'vehiculo': {
-                label: 'Seguro de Vehículo',
-                unitLabel: 'Número de Vehículos',
-                plans: [
-                    { id: 'cobertura-total', name: 'Valor Q150,000 (Q292/mes ~ Q3,500/año)', price: 292, detail: 'Daños, robo, asistencia 24/7 y grúa' }
-                ]
-            },
-            'hogar': {
-                label: 'Patrimonial / Hogar',
-                unitLabel: 'Inmuebles',
-                plans: [
-                    { id: 'basico', name: 'Básico Q100,000 (Q100/mes)', price: 100, detail: 'Incendio y robo básico' },
-                    { id: 'plus', name: 'Plus Q250,000 (Q200/mes)', price: 200, detail: 'Daños por agua y fenómenos' },
-                    { id: 'premium', name: 'Premium Q500,000 (Q375/mes)', price: 375, detail: 'Responsabilidad civil completa' }
-                ]
-            },
-            'pyme': {
-                label: 'Seguro PYME',
-                unitLabel: 'Colaboradores / Locales',
-                plans: [
-                    { id: 'basico', name: 'Básico Q250,000 (Q300/mes)', price: 300, detail: 'Edificaciones e inventarios' },
-                    { id: 'plus', name: 'Plus Q500,000 (Q550/mes)', price: 550, detail: 'Equipos y continuidad' },
-                    { id: 'integral', name: 'Integral Q1,000,000 (Q900/mes)', price: 900, detail: 'Cobertura total de empresa' }
-                ]
-            }
-        };
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+      <a href="#catalogo" class="mobile-link block py-2 text-slate-700 font-semibold">Catálogo de Servicios</a>
+      <a href="#aura-contigo" class="mobile-link block py-2 text-slate-700 font-semibold">Aura Contigo</a>
+      <a href="#cotizador" class="mobile-link block py-2 text-slate-700 font-semibold">Cotizador Rápido</a>
+      <a href="#nosotros" class="mobile-link block py-2 text-slate-700 font-semibold">Nosotros</a>
+      <a href="#contacto" class="mobile-link block py-2 text-slate-700 font-semibold">Contacto</a>
+      <div class="pt-4 border-t border-slate-100 flex flex-col space-y-3">
+        <a href="tel:5551234567" class="flex items-center text-sm font-bold text-aura-navy">
+          <i data-lucide="phone" class="w-4 h-4 mr-2 text-aura-blue"></i>
+          Tel: 555 123 4567
+        </a>
+        <a href="#cotizador" class="mobile-link w-full text-center px-5 py-3 rounded-full text-sm font-bold text-white bg-aura-blue">
+          Cotizar Ahora
+        </a>
+      </div>
+    </div>
+  </header>
 
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative hero-bg text-white py-16 md:py-24 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Content -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20 text-xs sm:text-sm font-medium text-aura-accent">
+            <i data-lucide="shield-check" class="w-4 h-4"></i>
+            <span>Catálogo Oficial de Servicios 2026</span>
+          </div>
 
-        document.querySelectorAll('.mobile-link').forEach(link => {
-            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-        });
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+            Un futuro más seguro <br class="hidden sm:inline"/>
+            <span class="text-aura-accent">comienza hoy</span>
+          </h1>
 
-        // Catalog Filter Logic
-        function filterCatalog(category) {
-            const tabs = document.querySelectorAll('.catalog-tab');
-            tabs.forEach(tab => {
-                tab.classList.remove('bg-aura-navy', 'text-white', 'shadow-md');
-                tab.classList.add('bg-white', 'text-slate-700');
-            });
+          <p class="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+            Protección inteligente para personas, familias y empresas. Soluciones integrales de seguros diseñadas para acompañarte en cada etapa de tu vida.
+          </p>
 
-            event.target.classList.remove('bg-white', 'text-slate-700');
-            event.target.classList.add('bg-aura-navy', 'text-white', 'shadow-md');
+          <p class="font-script text-2xl sm:text-3xl text-aura-gold pt-2">
+            "Más que seguros, tranquilidad"
+          </p>
 
-            const items = document.querySelectorAll('.catalog-item');
-            items.forEach(item => {
-                if (category === 'todos' || item.classList.contains(category)) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
+          <!-- CTAs -->
+          <div class="pt-6 flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+            <a href="#cotizador" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold bg-aura-accent text-aura-navy hover:bg-teal-300 shadow-lg shadow-teal-500/30 transition-all text-center">
+              Cotización Inmediata
+            </a>
+            <a href="#aura-contigo" class="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md transition-all text-center">
+              Conoce Aura Contigo
+            </a>
+          </div>
+        </div>
 
-        // Quote Calculator Controls
-        const typeSelect = document.getElementById('quote-type');
-        const planSelect = document.getElementById('quote-plan');
-        const unitsInput = document.getElementById('quote-units');
-        const cycleSelect = document.getElementById('quote-cycle');
-        const unitLabel = document.getElementById('unit-label');
+        <!-- Right Visual Card -->
+        <div class="lg:col-span-5">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <div class="relative bg-white text-aura-navy rounded-3xl p-8 shadow-2xl border-4 border-white/30 text-center space-y-6">
+              
+              <div class="bg-gradient-to-b from-slate-50 to-blue-50 p-8 rounded-2xl border border-slate-200 shadow-inner flex items-center justify-center min-h-[260px] sm:min-h-[300px]">
+                <img 
+                  src="https://lh3.googleusercontent.com/d/1gTEcQp7ynEqJVc9D6swn-c_Xu8aXhTZR" 
+                  alt="Aura Seguros Emblem" 
+                  class="h-48 sm:h-64 w-auto object-contain max-w-full drop-shadow-md"
+                  onerror="this.onerror=null; this.src='https://placehold.co/300x120/0A2540/FFFFFF?text=AURA+SEGUROS';"
+                />
+              </div>
 
-        function updatePlanOptions() {
-            const selectedType = typeSelect.value;
-            const data = quoteDatabase[selectedType];
+              <div class="space-y-2">
+                <h3 class="text-2xl font-black text-aura-navy">Respaldo Integral 24/7</h3>
+                <p class="text-slate-600 text-sm">Diseñamos soluciones personalizadas adaptadas a tus necesidades financieras y familiares.</p>
+              </div>
+
+              <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                <span>Siempre contigo</span>
+                <span class="font-bold text-aura-blue">www.auraseguros.com</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURED: AURA CONTIGO ================= -->
+  <section id="aura-contigo" class="py-20 bg-gradient-to-b from-slate-50 to-blue-50/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <div class="inline-flex items-center space-x-2 bg-aura-blue/10 text-aura-blue px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+          <i data-lucide="star" class="w-4 h-4 fill-aura-blue"></i>
+          <span>Programa Destacado</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-aura-navy">Línea Especial Aura Contigo</h2>
+        <p class="text-slate-600 text-lg">
+          Una sola protección para todo lo que importa. Soluciones de protección económica y servicios de asistencia integrados.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- 1. Aura Contigo Individual -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-lg hover:shadow-xl transition-all flex flex-col justify-between">
+          <div>
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 mb-6 flex justify-center items-center h-56 sm:h-64 overflow-hidden">
+              <img 
+                src="https://lh3.googleusercontent.com/d/1bMnvWoLOskUHLxuXfr02mGx_zmUPzles" 
+                alt="Aura Contigo Individual Badge" 
+                class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+                onerror="this.onerror=null; this.src='https://placehold.co/300x180/0A2540/FFFFFF?text=Aura+Contigo+Individual';"
+              />
+            </div>
+
+            <div class="mb-4">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Plan Individual</span>
+              <h3 class="text-2xl font-extrabold text-aura-navy">Aura Contigo</h3>
+            </div>
+
+            <p class="text-slate-600 text-sm mb-6">Solución individual de protección y asistencia integral diseñada para personas independientes.</p>
+
+            <div class="mb-6 p-4 bg-slate-50 rounded-2xl border border-slate-100">
+              <span class="text-xs text-slate-500 font-medium">Prima desde</span>
+              <div class="flex items-baseline space-x-1">
+                <span class="text-4xl font-extrabold text-aura-navy">Q45</span>
+                <span class="text-slate-500 font-semibold">/mes</span>
+              </div>
+            </div>
+
+            <ul class="space-y-3 text-sm text-slate-700 mb-8">
+              <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500 flex-shrink-0"></i><span>Cobertura de vida hasta <strong>Q50,000</strong></span></li>
+              <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500 flex-shrink-0"></i><span>Accidentes personales hasta <strong>Q25,000</strong></span></li>
+              <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500 flex-shrink-0"></i><span>Telemedicina & Orientación médica</span></li>
+              <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500 flex-shrink-0"></i><span>Asistencia funeraria + Digital</span></li>
+            </ul>
+          </div>
+
+          <a href="#cotizador" onclick="selectPlan('Aura Contigo Individual', 45)" class="w-full py-3.5 px-6 rounded-xl font-bold border-2 border-aura-blue text-aura-blue hover:bg-aura-blue hover:text-white transition-all text-center">Contratar Plan Individual</a>
+        </div>
+
+        <!-- 2. Aura Contigo Familia -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-aura-blue shadow-2xl relative flex flex-col justify-between transform md:-translate-y-2">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-aura-blue text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-md z-10">
+            Más Popular
+          </div>
+
+          <div>
+            <div class="bg-blue-50/60 p-4 rounded-2xl border border-blue-100 mb-6 flex justify-center items-center h-56 sm:h-64 pt-4 overflow-hidden">
+              <img 
+                src="https://lh3.googleusercontent.com/d/1LKJqRRCC_0O1VTaXIkRNbt1K91C-cyN9" 
+                alt="Aura Contigo Familia Badge" 
+                class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+                onerror="this.onerror=null; this.src='https://placehold.co/300x180/0052CC/FFFFFF?text=Aura+Contigo+Familia';"
+              />
+            </div>
+
+            <div class="mb-4">
+              <span class="text-xs font-bold text-aura-blue uppercase tracking-wider">Plan Familiar</span>
+              <h3 class="text-2xl font-extrabold text-aura-navy">Aura Contigo Familia</h3>
+            </div>
+
+            <p class="text-slate-600 text-sm mb-6">Tu familia merece la mejor protección. Concentra tu respaldo y servicios de asistencia en un solo plan.</p>
+
+            <div class="mb-6 p-4 bg-aura-lightBlue/60 rounded-2xl border border-blue-100">
+              <span class="text-xs text-aura-blue font-bold">Prima promocional</span>
+              <div class="flex items-baseline space-x-1">
+                <span class="text-4xl font-extrabold text-aura-navy">Q75</span>
+                <span class="text-slate-500 font-semibold">/mes</span>
+              </div>
+            </div>
+
+            <ul class="space-y-3 text-sm text-slate-700 mb-8">
+              <li class="flex items-center space-x-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-aura-blue flex-shrink-0"></i><span>Cobertura de vida hasta <strong>Q200,000</strong></span></li>
+              <li class="flex items-center space-x-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-aura-blue flex-shrink-0"></i><span>Accidentes personales hasta <strong>Q100,000</strong></span></li>
+              <li class="flex items-center space-x-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-aura-blue flex-shrink-0"></i><span>Telemedicina 24/7 + Asistencia Hogar</span></li>
+              <li class="flex items-center space-x-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-aura-blue flex-shrink-0"></i><span>Beneficios familiares integrados</span></li>
+            </ul>
+          </div>
+
+          <a href="#cotizador" onclick="selectPlan('Aura Contigo Familia', 75)" class="w-full py-3.5 px-6 rounded-xl font-bold bg-aura-blue text-white hover:bg-blue-700 shadow-lg shadow-blue-500/30 transition-all text-center">¡Contráta hoy por Q75/mes!</a>
+        </div>
+
+        <!-- 3. Aura Contigo Plus -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-lg hover:shadow-xl transition-all flex flex-col justify-between">
+          <div>
+            <div class="bg-amber-50/50 p-4 rounded-2xl border border-amber-100 mb-6 flex justify-center items-center h-56 sm:h-64 overflow-hidden">
+              <img 
+                src="https://lh3.googleusercontent.com/d/1lZY5HLmozQOiREehPVN7V_hGn_Uy6_bx" 
+                alt="Aura Contigo Plus Badge" 
+                class="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+                onerror="this.onerror=null; this.src='https://placehold.co/300x180/D97706/FFFFFF?text=Aura+Contigo+Plus';"
+              />
+            </div>
+
+            <div class="mb-4">
+              <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Protección Máxima</span>
+              <h3 class="text-2xl font-extrabold text-aura-navy">Aura Contigo Plus</h3>
+            </div>
+
+            <p class="text-slate-600 text-sm mb-6">Propuesta de protección superior con máximas sumas aseguradas y descuentos exclusivos en salud.</p>
+
+            <div class="mb-6 p-4 bg-amber-50/50 rounded-2xl border border-amber-100">
+              <span class="text-xs text-amber-700 font-bold">75% desc. en medicamentos</span>
+              <div class="flex items-baseline space-x-1">
+                <span class="text-4xl font-extrabold text-aura-navy">Q110</span>
+                <span class="text-slate-500 font-semibold">/mes</span>
+              </div>
+            </div>
+
+            <ul class="space-y-3 text-sm text-slate-700 mb-8">
+              <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500 flex-shrink-0"></i><span>Cobertura de vida hasta <strong>Q250,000</strong></span></li>
+              <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500 flex-shrink-0"></i><span>Accidentes personales hasta <strong>Q150,000</strong></span></li>
+              <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-emerald-500 flex-shrink-0"></i><span><strong>75% de descuento en medicamentos*</strong></span></li>
+            </ul>
+          </div>
+
+          <a href="#cotizador" onclick="selectPlan('Aura Contigo Plus', 110)" class="w-full py-3.5 px-6 rounded-xl font-bold border-2 border-aura-navy text-aura-navy hover:bg-aura-navy hover:text-white transition-all text-center">Contratar Plan Plus</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CATALOG OF SERVICES (8 TARJETAS) ================= -->
+  <section id="catalogo" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+        <span class="text-aura-blue font-bold text-sm tracking-wider uppercase">Catálogo Completo 2026</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-aura-navy">Soluciones Integrales para cada necesidad</h2>
+        <p class="text-slate-600">Explora la gama de coberturas que tenemos para ti, tu familia o tu empresa.</p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-2 mb-12">
+        <button onclick="filterCatalog('all')" class="filter-btn active px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-aura-navy text-white shadow-md" data-filter="all">Todos</button>
+        <button onclick="filterCatalog('personales')" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200" data-filter="personales">Seguros de Vida & Personal</button>
+        <button onclick="filterCatalog('salud')" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200" data-filter="salud">Gastos Médicos</button>
+        <button onclick="filterCatalog('vehiculos')" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200" data-filter="vehiculos">Vehículos</button>
+        <button onclick="filterCatalog('patrimonial')" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200" data-filter="patrimonial">Hogar & Patrimonial</button>
+        <button onclick="filterCatalog('empresas')" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200" data-filter="empresas">Empresarial & PYMEs</button>
+      </div>
+
+      <!-- Services Grid (8 Tarjetas) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="catalog-grid">
+
+        <!-- 1. Seguro de Vida -->
+        <div class="catalog-item catalog-personales bg-slate-50 rounded-2xl p-6 border border-slate-200 flex flex-col justify-between hover:border-aura-blue transition-all hover:shadow-md">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="p-3 bg-blue-100 text-aura-blue rounded-xl"><i data-lucide="heart" class="w-6 h-6"></i></div>
+              <div>
+                <h3 class="text-xl font-bold text-aura-navy">Seguro de Vida</h3>
+                <span class="text-xs text-slate-500">Individual</span>
+              </div>
+            </div>
+            <p class="text-slate-600 text-sm mb-4">Protección económica para los beneficiarios designados por el asegurado en caso de fallecimiento durante la vigencia.</p>
+            <div class="bg-blue-50/50 p-3 rounded-lg border border-blue-100 text-xs font-semibold mb-6">
+              • Básico: Q100,000 (desde Q75/mes)<br>
+              • Familiar: Q250,000 (desde Q150/mes)<br>
+              • Plus: Q500,000 (desde Q275/mes)
+            </div>
+          </div>
+          <a href="#cotizador" onclick="selectCategory('Vida Individual')" class="w-full text-center py-2.5 bg-white border border-slate-300 rounded-lg text-sm font-bold text-aura-navy hover:bg-aura-navy hover:text-white transition-all">Solicitar Información</a>
+        </div>
+
+        <!-- 2. Accidentes Personales -->
+        <div class="catalog-item catalog-personales bg-slate-50 rounded-2xl p-6 border border-slate-200 flex flex-col justify-between hover:border-aura-blue transition-all hover:shadow-md">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="p-3 bg-emerald-100 text-emerald-600 rounded-xl"><i data-lucide="activity" class="w-6 h-6"></i></div>
+              <div>
+                <h3 class="text-xl font-bold text-aura-navy">Accidentes Personales</h3>
+                <span class="text-xs text-slate-500">Protección Inmediata</span>
+              </div>
+            </div>
+            <p class="text-slate-600 text-sm mb-4">Protección económica frente a las consecuencias derivadas de accidentes cubiertos durante la vigencia.</p>
+            <div class="bg-emerald-50/50 p-3 rounded-lg border border-emerald-100 text-xs font-semibold mb-6">
+              • Básico: Q50,000 (Q35/mes)<br>
+              • Plus: Q100,000 (Q60/mes)<br>
+              • Premium: Q200,000 (Q95/mes)
+            </div>
+          </div>
+          <a href="#cotizador" onclick="selectCategory('Accidentes Personales')" class="w-full text-center py-2.5 bg-white border border-slate-300 rounded-lg text-sm font-bold text-aura-navy hover:bg-aura-navy hover:text-white transition-all">Solicitar Información</a>
+        </div>
+
+        <!-- 3. Gastos Médicos -->
+        <div class="catalog-item catalog-salud bg-slate-50 rounded-2xl p-6 border border-slate-200 flex flex-col justify-between hover:border-aura-blue transition-all hover:shadow-md">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="p-3 bg-rose-100 text-rose-600 rounded-xl"><i data-lucide="stethoscope" class="w-6 h-6"></i></div>
+              <div>
+                <h3 class="text-xl font-bold text-aura-navy">Gastos Médicos</h3>
+                <span class="text-xs text-slate-500">Salud Individual & Familiar</span>
+              </div>
+            </div>
+            <p class="text-slate-600 text-sm mb-4">Apoyo económico para atención médica, hospitalización, procedimientos y emergencias 24/7.</p>
+            <div class="bg-rose-50/50 p-3 rounded-lg border border-rose-100 text-xs font-semibold mb-6">
+              • Esencial: Q100,000 (desde Q350 ind / Q650 fam)<br>
+              • Integral: Q250,000 (desde Q350 ind / Q650 fam)<br>
+              • Premium: Q500,000 (desde Q350 ind / Q650 fam)
+            </div>
+          </div>
+          <a href="#cotizador" onclick="selectCategory('Gastos Médicos')" class="w-full text-center py-2.5 bg-white border border-slate-300 rounded-lg text-sm font-bold text-aura-navy hover:bg-aura-navy hover:text-white transition-all">Solicitar Información</a>
+        </div>
+
+        <!-- 4. Vida Familiar -->
+        <div class="catalog-item catalog-personales bg-slate-50 rounded-2xl p-6 border border-slate-200 flex flex-col justify-between hover:border-aura-blue transition-all hover:shadow-md">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="p-3 bg-purple-100 text-purple-600 rounded-xl"><i data-lucide="users" class="w-6 h-6"></i></div>
+              <div>
+                <h3 class="text-xl font-bold text-aura-navy">Vida Familiar</h3>
+                <span class="text-xs text-slate-500">Grupo Familiar</span>
+              </div>
+            </div>
+            <p class="text-slate-600 text-sm mb-4">Protección económica integral para el titular, cónyuge e hijos dependientes en una sola póliza.</p>
+            <div class="bg-purple-50/50 p-3 rounded-lg border border-purple-100 text-xs font-semibold mb-6">
+              • Familiar Básico: Q100,000 (Q125/mes)<br>
+              • Familiar Plus: Q250,000 (Q225/mes)<br>
+              • Familiar Premium: Q400,000 (Q350/mes)
+            </div>
+          </div>
+          <a href="#cotizador" onclick="selectCategory('Vida Familiar')" class="w-full text-center py-2.5 bg-white border border-slate-300 rounded-lg text-sm font-bold text-aura-navy hover:bg-aura-navy hover:text-white transition-all">Solicitar Información</a>
+        </div>
+
+        <!-- 5. Vehículos -->
+        <div class="catalog-item catalog-vehiculos bg-slate-50 rounded-2xl p-6 border border-slate-200 flex flex-col justify-between hover:border-aura-blue transition-all hover:shadow-md">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="p-3 bg-amber-100 text-amber-600 rounded-xl"><i data-lucide="car" class="w-6 h-6"></i></div>
+              <div>
+                <h3 class="text-xl font-bold text-aura-navy">Seguro de Vehículos</h3>
+                <span class="text-xs text-slate-500">Auto & Moto</span>
+              </div>
+            </div>
+            <p class="text-slate-600 text-sm mb-4">Protección contra colisiones, robo, daños a terceros y asistencia vial 24/7 en carretera.</p>
+            <div class="bg-amber-50/50 p-3 rounded-lg border border-amber-100 text-xs font-semibold mb-6">
+              • Valor asegurado ref: Q150,000<br>
+              • Prima desde Q3,500/año (cuotas disponibles)
+            </div>
+          </div>
+          <a href="#cotizador" onclick="selectCategory('Vehículos')" class="w-full text-center py-2.5 bg-white border border-slate-300 rounded-lg text-sm font-bold text-aura-navy hover:bg-aura-navy hover:text-white transition-all">Solicitar Información</a>
+        </div>
+
+        <!-- 6. Patrimonial / Hogar -->
+        <div class="catalog-item catalog-patrimonial bg-slate-50 rounded-2xl p-6 border border-slate-200 flex flex-col justify-between hover:border-aura-blue transition-all hover:shadow-md">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="p-3 bg-teal-100 text-teal-600 rounded-xl"><i data-lucide="home" class="w-6 h-6"></i></div>
+              <div>
+                <h3 class="text-xl font-bold text-aura-navy">Seguro Patrimonial</h3>
+                <span class="text-xs text-slate-500">Hogar & Inmuebles</span>
+              </div>
+            </div>
+            <p class="text-slate-600 text-sm mb-4">Protección de viviendas, locales, oficinas y bienes contra incendio, robo y fenómenos naturales.</p>
+            <div class="bg-teal-50/50 p-3 rounded-lg border border-teal-100 text-xs font-semibold mb-6">
+              • Patrimonial Básico: Q100,000 (desde Q100/mes)<br>
+              • Patrimonial Plus: Q250,000 (desde Q200/mes)<br>
+              • Patrimonial Premium: Q500,000 (desde Q375/mes)
+            </div>
+          </div>
+          <a href="#cotizador" onclick="selectCategory('Patrimonial')" class="w-full text-center py-2.5 bg-white border border-slate-300 rounded-lg text-sm font-bold text-aura-navy hover:bg-aura-navy hover:text-white transition-all">Solicitar Información</a>
+        </div>
+
+        <!-- 7. Empresarial Colectivo -->
+        <div class="catalog-item catalog-empresas bg-slate-50 rounded-2xl p-6 border border-slate-200 flex flex-col justify-between hover:border-aura-blue transition-all hover:shadow-md">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="p-3 bg-indigo-100 text-indigo-600 rounded-xl"><i data-lucide="building" class="w-6 h-6"></i></div>
+              <div>
+                <h3 class="text-xl font-bold text-aura-navy">Vida Colectiva Empresa</h3>
+                <span class="text-xs text-slate-500">Corporativo</span>
+              </div>
+            </div>
+            <p class="text-slate-600 text-sm mb-4">Programa colectivo de seguro de vida contratado por organizaciones para respaldar a sus colaboradores.</p>
+            <div class="bg-indigo-50/50 p-3 rounded-lg border border-indigo-100 text-xs font-semibold mb-6">
+              • Empresarial Básico: Q50,000 (desde Q30/mes)<br>
+              • Empresarial Plus: Q100,000 (desde Q30/mes)<br>
+              • Empresarial Premium: Q200,000 (desde Q30/mes)
+            </div>
+          </div>
+          <a href="#cotizador" onclick="selectCategory('Empresarial Colectivo')" class="w-full text-center py-2.5 bg-white border border-slate-300 rounded-lg text-sm font-bold text-aura-navy hover:bg-aura-navy hover:text-white transition-all">Solicitar Información</a>
+        </div>
+
+        <!-- 8. Seguro PYME -->
+        <div class="catalog-item catalog-empresas bg-slate-50 rounded-2xl p-6 border border-slate-200 flex flex-col justify-between hover:border-aura-blue transition-all hover:shadow-md">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="p-3 bg-cyan-100 text-cyan-600 rounded-xl"><i data-lucide="briefcase" class="w-6 h-6"></i></div>
+              <div>
+                <h3 class="text-xl font-bold text-aura-navy">Seguro PYME</h3>
+                <span class="text-xs text-slate-500">Comercios & Negocios</span>
+              </div>
+            </div>
+            <p class="text-slate-600 text-sm mb-4">Protección integral para pequeñas y medianas empresas frente a riesgos que afecten instalaciones, equipos e inventarios.</p>
+            <div class="bg-cyan-50/50 p-3 rounded-lg border border-cyan-100 text-xs font-semibold mb-6">
+              • PYME Básico: hasta Q250,000 (desde Q300/mes)<br>
+              • PYME Plus: hasta Q500,000 (desde Q550/mes)<br>
+              • PYME Integral: hasta Q1,000,000 (desde Q900/mes)
+            </div>
+          </div>
+          <a href="#cotizador" onclick="selectCategory('Seguro PYME')" class="w-full text-center py-2.5 bg-white border border-slate-300 rounded-lg text-sm font-bold text-aura-navy hover:bg-aura-navy hover:text-white transition-all">Solicitar Información</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE QUOTE ESTIMATOR ================= -->
+  <section id="cotizador" class="py-20 hero-bg text-white relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center space-y-4 mb-12">
+        <span class="bg-aura-accent/20 text-aura-accent px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border border-aura-accent/30">Calculadora Interactiva</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold">Simula tu Cotización</h2>
+        <p class="text-blue-100 text-sm sm:text-base">Selecciona las coberturas que deseas para obtener un estimado instantáneo.</p>
+      </div>
+
+      <div class="bg-white text-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl space-y-8">
+        <form id="quote-form" class="space-y-6" onsubmit="handleQuoteSubmit(event)">
+          
+          <div>
+            <label class="block text-sm font-bold text-aura-navy mb-2">1. Selecciona el Tipo de Seguro</label>
+            <select id="quote-category" class="w-full p-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-aura-blue focus:outline-none text-slate-700 font-medium" onchange="updateCalculator()">
+              <option value="aura-contigo-fam">Aura Contigo - Familiar (Q75/mes)</option>
+              <option value="aura-contigo-ind">Aura Contigo - Individual (Q45/mes)</option>
+              <option value="aura-contigo-plus">Aura Contigo - Plus (Q110/mes)</option>
+              <option value="vida-ind">Vida Individual (desde Q75/mes)</option>
+              <option value="accidentes">Accidentes Personales (desde Q35/mes)</option>
+              <option value="gastos-medicos">Gastos Médicos (desde Q350/mes)</option>
+              <option value="vehiculos">Vehículos (desde Q3,500/año)</option>
+              <option value="patrimonial">Patrimonial / Hogar (desde Q100/mes)</option>
+              <option value="pyme">PYME / Empresarial (desde Q300/mes)</option>
+            </select>
+          </div>
+
+          <div id="plan-level-container">
+            <label class="block text-sm font-bold text-aura-navy mb-2">2. Cobertura / Suma Asegurada</label>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="plan-options-grid"></div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 space-y-4">
+            <label class="block text-sm font-bold text-aura-navy">3. Tus Datos de Contacto</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input type="text" id="quote-name" required placeholder="Nombre completo" class="p-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-aura-blue focus:outline-none text-sm">
+              <input type="email" id="quote-email" required placeholder="Correo electrónico" class="p-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-aura-blue focus:outline-none text-sm">
+            </div>
+          </div>
+
+          <div class="bg-aura-lightBlue p-6 rounded-2xl flex flex-col sm:flex-row items-center justify-between border border-blue-100 gap-4">
+            <div>
+              <span class="text-xs font-bold text-aura-blue uppercase">Estimación Estimada</span>
+              <div class="flex items-baseline space-x-2">
+                <span id="calculated-price" class="text-4xl font-extrabold text-aura-navy">Q75</span>
+                <span id="calculated-period" class="text-slate-600 font-semibold text-sm">/ mes</span>
+              </div>
+            </div>
+
+            <button type="submit" class="w-full sm:w-auto px-8 py-4 bg-aura-blue hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg transition-all flex items-center justify-center space-x-2">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span>Solicitar Póliza</span>
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= ABOUT & VALUE PROP ================= -->
+  <section id="nosotros" class="py-20 bg-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <div class="space-y-6">
+          <span class="text-aura-blue font-bold text-sm tracking-wider uppercase">¿Por qué Aura Seguros?</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-aura-navy">Respaldo confiable, atención humana y rápida</h2>
+          <p class="text-slate-600 leading-relaxed">
+            En Aura Seguros creemos que contratar una póliza no debe ser complicado. Acompañamos a miles de familias y empresas a construir un cerco de protección sólida con atención personalizada.
+          </p>
+
+          <div class="grid grid-cols-2 gap-6 pt-4">
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+              <div class="text-3xl font-extrabold text-aura-blue mb-1">+15,000</div>
+              <div class="text-xs text-slate-500 font-medium">Asegurados Activos</div>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+              <div class="text-3xl font-extrabold text-aura-accent mb-1">99.4%</div>
+              <div class="text-xs text-slate-500 font-medium">Satisfacción en Reclamos</div>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+              <div class="text-3xl font-extrabold text-aura-navy mb-1">24 / 7</div>
+              <div class="text-xs text-slate-500 font-medium">Asistencia Médica & Vial</div>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+              <div class="text-3xl font-extrabold text-amber-500 mb-1">100%</div>
+              <div class="text-xs text-slate-500 font-medium">Cumplimiento Legal</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion FAQ -->
+        <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-lg space-y-4">
+          <h3 class="text-xl font-bold text-aura-navy mb-6">Preguntas Frecuentes</h3>
+
+          <details class="group border-b border-slate-100 pb-4">
+            <summary class="flex justify-between items-center font-bold text-slate-700 cursor-pointer list-none">
+              <span>¿Cómo solicito un reembolso médico?</span>
+              <span class="transition group-open:rotate-180"><i data-lucide="chevron-down" class="w-5 h-5 text-aura-blue"></i></span>
+            </summary>
+            <p class="text-slate-600 text-sm pt-3 leading-relaxed">Puedes ingresar tu solicitud a través de nuestro portal digital o llamando al PBX 555 123 4567 adjuntando tus facturas y diagnóstico médico.</p>
+          </details>
+
+          <details class="group border-b border-slate-100 pb-4">
+            <summary class="flex justify-between items-center font-bold text-slate-700 cursor-pointer list-none">
+              <span>¿Puedo cambiar de plan después de contratar?</span>
+              <span class="transition group-open:rotate-180"><i data-lucide="chevron-down" class="w-5 h-5 text-aura-blue"></i></span>
+            </summary>
+            <p class="text-slate-600 text-sm pt-3 leading-relaxed">Sí, puedes subir o modificar la cobertura de tu póliza en cualquier momento al renovar o comunicándote con tu asesor asignado.</p>
+          </details>
+
+          <details class="group border-b border-slate-100 pb-4">
+            <summary class="flex justify-between items-center font-bold text-slate-700 cursor-pointer list-none">
+              <span>¿Qué hacer en caso de un accidente de tránsito?</span>
+              <span class="transition group-open:rotate-180"><i data-lucide="chevron-down" class="w-5 h-5 text-aura-blue"></i></span>
+            </summary>
+            <p class="text-slate-600 text-sm pt-3 leading-relaxed">Llama inmediatamente a nuestra línea de emergencia 24/7. Un ajustador de Aura Seguros asistirá al lugar en menos de 30 minutos.</p>
+          </details>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CONTACT FORM & LOCATION ================= -->
+  <section id="contacto" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <span class="text-aura-blue font-bold text-sm tracking-wider uppercase">Atención Personalizada</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-aura-navy">Estamos listos para asesorarte</h2>
+        <p class="text-slate-600">Completa el formulario o ponte en contacto directo con nuestras oficinas centralizadas.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Formulario de Contacto Directo -->
+        <div class="lg:col-span-7 bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm">
+          <form onsubmit="handleContactSubmit(event)" class="space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Nombre completo</label>
+                <input type="text" required placeholder="Ej. Ana García" class="w-full p-3.5 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-aura-blue focus:outline-none text-sm">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Teléfono</label>
+                <input type="tel" required placeholder="Ej. 5555-1234" class="w-full p-3.5 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-aura-blue focus:outline-none text-sm">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Correo Electrónico</label>
+              <input type="email" required placeholder="correo@ejemplo.com" class="w-full p-3.5 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-aura-blue focus:outline-none text-sm">
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Servicio de Interés</label>
+              <select class="w-full p-3.5 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-aura-blue focus:outline-none text-sm text-slate-700">
+                <option>Aura Contigo - Planes de Asistencia</option>
+                <option>Seguro de Vida Individual o Familiar</option>
+                <option>Gastos Médicos</option>
+                <option>Seguro de Vehículos</option>
+                <option>Seguro Empresarial / PYME</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Mensaje o Consulta</label>
+              <textarea rows="4" placeholder="Escribe tu mensaje aquí..." class="w-full p-3.5 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-aura-blue focus:outline-none text-sm"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-4 bg-aura-navy hover:bg-slate-800 text-white font-bold rounded-xl shadow-md transition-all text-sm">
+              Enviar Mensaje Directo
+            </button>
+          </form>
+        </div>
+
+        <!-- Info de Contacto & Ubicación -->
+        <div class="lg:col-span-5 space-y-8 flex flex-col justify-between">
+          <div class="bg-aura-navy text-white p-8 rounded-3xl space-y-6 shadow-xl">
+            <h3 class="text-2xl font-bold">Oficina Central</h3>
             
-            unitLabel.textContent = data.unitLabel;
-            planSelect.innerHTML = '';
+            <div class="space-y-4 text-sm text-slate-200">
+              <div class="flex items-start space-x-3">
+                <i data-lucide="map-pin" class="w-5 h-5 text-aura-accent flex-shrink-0 mt-0.5"></i>
+                <span>Av. Reforma 12-01, Zona 10, Edificio Aura, Nivel 8.</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <i data-lucide="phone" class="w-5 h-5 text-aura-accent flex-shrink-0"></i>
+                <span>PBX: 555 123 4567</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <i data-lucide="mail" class="w-5 h-5 text-aura-accent flex-shrink-0"></i>
+                <span>contacto@auraseguros.com</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <i data-lucide="clock" class="w-5 h-5 text-aura-accent flex-shrink-0"></i>
+                <span>Lunes a Viernes: 8:00 AM - 6:00 PM</span>
+              </div>
+            </div>
 
-            data.plans.forEach(plan => {
-                const opt = document.createElement('option');
-                opt.value = plan.id;
-                opt.textContent = plan.name;
-                planSelect.appendChild(opt);
-            });
+            <div class="pt-4 border-t border-white/10 flex space-x-4">
+              <a href="#" class="p-2.5 bg-white/10 hover:bg-white/20 rounded-xl text-white transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+              <a href="#" class="p-2.5 bg-white/10 hover:bg-white/20 rounded-xl text-white transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+              <a href="#" class="p-2.5 bg-white/10 hover:bg-white/20 rounded-xl text-white transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+            </div>
+          </div>
 
-            calculateQuote();
+          <!-- Mapa simulado -->
+          <div class="bg-slate-100 rounded-3xl p-6 border border-slate-200 flex items-center justify-center h-48 text-center text-slate-500 text-sm">
+            <div class="space-y-2">
+              <i data-lucide="map" class="w-8 h-8 text-aura-blue mx-auto"></i>
+              <p class="font-semibold text-aura-navy">Ubicación Estratégica en Zona 10</p>
+              <p class="text-xs text-slate-400">Estacionamiento exclusivo para clientes</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-aura-dark text-white pt-16 pb-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        
+        <!-- Brand Col -->
+        <div class="space-y-4">
+          <div class="bg-white p-3 rounded-2xl inline-block shadow-lg border border-slate-200">
+            <img 
+              src="https://lh3.googleusercontent.com/d/1gTEcQp7ynEqJVc9D6swn-c_Xu8aXhTZR" 
+              alt="Aura Seguros Logo Footer" 
+              class="h-16 w-auto object-contain max-w-[220px]"
+              onerror="this.onerror=null; this.src='https://placehold.co/220x70/0A2540/FFFFFF?text=AURA+SEGUROS';"
+            />
+          </div>
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+            Protección inteligente para personas, familias y empresas. Soluciones integrales de seguros para cada etapa de tu vida.
+          </p>
+          <p class="font-script text-aura-gold text-xl">Más que seguros, tranquilidad</p>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="space-y-3">
+          <h4 class="text-lg font-bold text-white">Contacto Directo</h4>
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex items-center space-x-3"><i data-lucide="phone" class="w-4 h-4 text-aura-accent"></i><span>Tel. 555 123 4567</span></li>
+            <li class="flex items-center space-x-3"><i data-lucide="globe" class="w-4 h-4 text-aura-accent"></i><span>www.auraseguros.com</span></li>
+            <li class="flex items-center space-x-3"><i data-lucide="clock" class="w-4 h-4 text-aura-accent"></i><span>Atención 24/7</span></li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="text-lg font-bold text-white">Líneas de Protección</h4>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="#catalogo" class="hover:text-white transition-colors">Seguros de Vida</a></li>
+            <li><a href="#catalogo" class="hover:text-white transition-colors">Gastos Médicos</a></li>
+            <li><a href="#aura-contigo" class="hover:text-white transition-colors">Aura Contigo Familia</a></li>
+            <li><a href="#catalogo" class="hover:text-white transition-colors">Seguros para PYMEs</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="text-lg font-bold text-white">Garantía Aura</h4>
+          <div class="bg-white/5 p-4 rounded-xl border border-white/10 text-xs text-slate-300">
+            <p class="font-semibold text-aura-accent mb-1">Respuesta Inmediata</p>
+            <p>Atención directa y asesoría personalizada para la gestión de tus pólizas.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+        <p>© 2026 Aura Seguros. Todos los derechos reservados.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= NOTIFICATION MODAL ================= -->
+  <div id="modal-success" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden">
+    <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center space-y-4 shadow-2xl">
+      <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+        <i data-lucide="check-circle" class="w-10 h-10"></i>
+      </div>
+      <h3 class="text-2xl font-bold text-aura-navy">¡Solicitud Recibida!</h3>
+      <p class="text-slate-600 text-sm">Gracias por contactar a Aura Seguros. Un asesor se comunicará contigo a la brevedad.</p>
+      <button onclick="closeModal()" class="w-full py-3 bg-aura-navy text-white font-bold rounded-xl hover:bg-slate-800">Entendido</button>
+    </div>
+  </div>
+
+  <!-- Script logic -->
+  <script>
+    lucide.createIcons();
+
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Catalog Filter Logic
+    function filterCatalog(category) {
+      const items = document.querySelectorAll('.catalog-item');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-filter') === category) {
+          btn.classList.add('bg-aura-navy', 'text-white', 'shadow-md');
+          btn.classList.remove('bg-slate-100', 'text-slate-600');
+        } else {
+          btn.classList.remove('bg-aura-navy', 'text-white', 'shadow-md');
+          btn.classList.add('bg-slate-100', 'text-slate-600');
         }
+      });
 
-        function calculateQuote() {
-            const selectedType = typeSelect.value;
-            const data = quoteDatabase[selectedType];
-            const planId = planSelect.value;
-            const plan = data.plans.find(p => p.id === planId) || data.plans[0];
-            
-            let units = parseInt(unitsInput.value) || 1;
-            if (units < 1) units = 1;
-
-            let baseMonthly = plan.price * units;
-            let finalPrice = baseMonthly;
-            let cycleText = '/ mes';
-
-            if (cycleSelect.value === 'anual') {
-                // Annual discount: 11 months pay instead of 12
-                finalPrice = baseMonthly * 11;
-                cycleText = '/ año (ahorro aplicado)';
-            }
-
-            document.getElementById('calculated-price').textContent = `Q${finalPrice.toLocaleString('es-GT', {minimumFractionDigits: 2})}`;
-            document.getElementById('calculated-cycle').textContent = cycleText;
-            document.getElementById('calculated-detail').textContent = plan.detail;
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains(`catalog-${category}`)) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
         }
+      });
+    }
 
-        typeSelect.addEventListener('change', updatePlanOptions);
-        planSelect.addEventListener('change', calculateQuote);
-        unitsInput.addEventListener('input', calculateQuote);
-        cycleSelect.addEventListener('change', calculateQuote);
+    const planData = {
+      'aura-contigo-fam': [{ label: 'Aura Contigo Familia (Q200k Vida)', price: 75, period: '/ mes' }],
+      'aura-contigo-ind': [{ label: 'Aura Contigo Individual (Q50k Vida)', price: 45, period: '/ mes' }],
+      'aura-contigo-plus': [{ label: 'Aura Contigo Plus (Q250k Vida)', price: 110, period: '/ mes' }],
+      'vida-ind': [
+        { label: 'Básico (Q100,000)', price: 75, period: '/ mes' },
+        { label: 'Familiar (Q250,000)', price: 150, period: '/ mes' },
+        { label: 'Plus (Q500,000)', price: 275, period: '/ mes' }
+      ],
+      'accidentes': [
+        { label: 'Básico (Q50,000)', price: 35, period: '/ mes' },
+        { label: 'Plus (Q100,000)', price: 60, period: '/ mes' },
+        { label: 'Premium (Q200,000)', price: 95, period: '/ mes' }
+      ],
+      'gastos-medicos': [
+        { label: 'Esencial (Q100,000)', price: 350, period: '/ mes' },
+        { label: 'Integral (Q250,000)', price: 500, period: '/ mes' },
+        { label: 'Premium (Q500,000)', price: 650, period: '/ mes' }
+      ],
+      'vehiculos': [
+        { label: 'Cobertura Completa (Ref. Q150,000)', price: 3500, period: '/ año' }
+      ],
+      'patrimonial': [
+        { label: 'Patrimonial Básico (Q100,000)', price: 100, period: '/ mes' },
+        { label: 'Patrimonial Plus (Q250,000)', price: 200, period: '/ mes' },
+        { label: 'Patrimonial Premium (Q500,000)', price: 375, period: '/ mes' }
+      ],
+      'pyme': [
+        { label: 'PYME Básico (hasta Q250,000)', price: 300, period: '/ mes' },
+        { label: 'PYME Plus (hasta Q500,000)', price: 550, period: '/ mes' },
+        { label: 'PYME Integral (hasta Q1,000,000)', price: 900, period: '/ mes' }
+      ]
+    };
 
-        // Accordion FAQ Toggle
-        function toggleFaq(btn) {
-            const content = btn.nextElementSibling;
-            const icon = btn.querySelector('i');
-            
-            if (content.classList.contains('hidden')) {
-                content.classList.remove('hidden');
-                icon.style.transform = 'rotate(180deg)';
-            } else {
-                content.classList.add('hidden');
-                icon.style.transform = 'rotate(0deg)';
-            }
-        }
+    function updateCalculator() {
+      const categorySelect = document.getElementById('quote-category').value;
+      const optionsGrid = document.getElementById('plan-options-grid');
+      const options = planData[categorySelect] || [];
+      optionsGrid.innerHTML = '';
 
-        // Contact Form Modal Handler
-        document.getElementById('contact-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            document.getElementById('modal-confirm').classList.remove('hidden');
-            e.target.reset();
-        });
+      options.forEach((opt, idx) => {
+        const isChecked = idx === 0 ? 'checked' : '';
+        optionsGrid.innerHTML += `
+          <label class="cursor-pointer border border-slate-200 rounded-xl p-3 flex items-start space-x-3 bg-slate-50 has-[:checked]:bg-blue-50 has-[:checked]:border-aura-blue">
+            <input type="radio" name="plan-tier" value="${opt.price}" ${isChecked} onchange="calculatePrice(${opt.price}, '${opt.period}')">
+            <div class="text-xs font-bold text-aura-navy">${opt.label}</div>
+          </label>`;
+      });
+      if (options.length > 0) calculatePrice(options[0].price, options[0].period);
+    }
 
-        function closeModal() {
-            document.getElementById('modal-confirm').classList.add('hidden');
-        }
+    function calculatePrice(price, period) {
+      document.getElementById('calculated-price').innerText = `Q${price}`;
+      document.getElementById('calculated-period').innerText = period;
+    }
 
-        // Initialize default option
-        window.addEventListener('DOMContentLoaded', () => {
-            updatePlanOptions();
-        });
-    </script>
+    function selectPlan(planName, price) {
+      document.getElementById('quote-category').value = 'aura-contigo-fam';
+      updateCalculator();
+    }
+
+    function selectCategory(categoryName) {
+      const categorySelect = document.getElementById('quote-category');
+      if (categoryName === 'Vida Individual') categorySelect.value = 'vida-ind';
+      if (categoryName === 'Accidentes Personales') categorySelect.value = 'accidentes';
+      if (categoryName === 'Gastos Médicos') categorySelect.value = 'gastos-medicos';
+      if (categoryName === 'Vida Familiar') categorySelect.value = 'aura-contigo-fam';
+      if (categoryName === 'Vehículos') categorySelect.value = 'vehiculos';
+      if (categoryName === 'Patrimonial') categorySelect.value = 'patrimonial';
+      if (categoryName === 'Empresarial Colectivo') categorySelect.value = 'pyme';
+      if (categoryName === 'Seguro PYME') categorySelect.value = 'pyme';
+
+      updateCalculator();
+    }
+
+    function handleQuoteSubmit(e) {
+      e.preventDefault();
+      document.getElementById('modal-success').classList.remove('hidden');
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      document.getElementById('modal-success').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('modal-success').classList.add('hidden');
+    }
+
+    window.addEventListener('DOMContentLoaded', updateCalculator);
+  </script>
 </body>
 </html>
